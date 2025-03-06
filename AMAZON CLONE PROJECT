@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+                                <!-- navbar section -->
+    <header>
+        <div class="navbar">
+            <div class="naveLogo border">
+                <div class="logo"></div>
+            </div>
+
+            <div class="navAddress border">
+                <p class="addFirst">Deliver to</p>
+                <div class="addIcon">
+                    <i class="fas fa-map-marker-alt" style="color: #cccccc;"></i>
+                    <!-- <img src="location.svg" alt="location"> -->
+                    <p class="addSecond">India</p>
+                </div>
+            </div>
+
+            <div class="navSearch border">
+                <select class="searchSelect" name="" id="">
+                    <option value="">All</option>
+                </select>
+                <input type="text" placeholder="Search Amazon" class="searchInput">
+                <div class="searchIcon">
+                    <img src="Search.svg" alt="SearchIcon">   
+                </div>
+            </div>
+
+            <div class="language">
+                <select class="languages border">
+                    <option value="">[#] EN</option> 
+                    <option value="">In</option>
+                    <option value="">USA</option>
+                    <option value="">UK</option>
+                </select>
+            </div>
+
+            <div class="navSignIn border">
+                <p><span>Hello, Sign in</span></p>
+                <p class="navSecond">Account & Listes</p>
+            </div>
+
+            <div class="navReturn border">
+                <p><span>Returns</span></p>
+                <p class="navSecond">& Orders</p>
+            </div>
+
+            <div class="navCart border">
+                <i class="fas fa-shopping-cart"></i> Cart
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panelAll">
+                <i class="fas fa-bars"></i> All 
+            </div>
+            <div class="panelOps">
+                <p>Today's Deals</p>
+                <p>Customer Service</p>
+                <p>Register</p>
+                <p>Gift Cards</p>
+                <p>Sell</p>
+            </div>
+            <div class="panelDeals">
+                Shope Deals in Electronics
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="heroSection">
+            <div class="heroMsg">
+                <p>You are on Amazon.com. You can also shop on Amazon India for millions of product with faster delivery.
+                    <a href="#"> Click here to go to Amazon.in</a></p>
+            </div>
+        </div>
+
+        <div class="shopSection">
+            <div class="box">
+                <h2>Clothes</h2>
+                <div class="boxImg" style="background-image: url('box1_image.jpg');"></div>
+                <a>See More</a>
+            </div>
+            <div class="box">
+                <h2>Electronic Devices</h2>
+                <div class="boxImg" style="background-image: url('box2_image.jpg');"></div>
+                <a>See More</a>
+            </div>
+            <div class="box">
+                <h2>Furnitures</h2>
+                <div class="boxImg" style="background-image: url('box3_image.jpg');"></div>
+                <a>See More</a>
+            </div>
+            <div class="box">
+                <h2>Mobile Phones</h2>
+                <div class="boxImg" style="background-image: url('box4_image.jpg');"></div>
+                <a>See More</a>
+            </div>
+
+              <div class="shopSection">
+                <div class="box">
+                    <h2>Beauty Pick</h2>
+                    <div class="boxImg" style="background-image: url('box5_image.jpg');"></div>
+                    <a>See More</a>
+                </div>
+                <div class="box">
+                    <h2>Pets Care</h2>
+                    <div class="boxImg" style="background-image: url('box6_image.jpg');"></div>
+                    <a>See More</a>
+                </div>
+                <div class="box">
+                    <h2>New Arrival in Toys</h2>
+                    <div class="boxImg" style="background-image: url('box7_image.jpg');"></div>
+                    <a>See More</a>
+                </div>
+                <div class="box">
+                    <h2>Discover Fashion Trends</h2>
+                    <div class="boxImg" style="background-image: url('box8_image.jpg');"></div>
+                    <a>See More</a>
+                </div>
+            </div>
+        </div>
+          
+    </main>
+    <footer>
+        <div class="foot-panel">
+            Back to Top
+        </div>
+        <div class="foot-panel2">
+            <ul class="footBox1">
+               <p> Get to Know Us</p>
+                <a>About Amazon</a>
+                <a>Careers</a>
+                <a>Press Releases</a>
+                <a>Amazon Science</a>
+            </ul>
+            <ul class="footBox2">
+              <p> Connect with Us</p> 
+                <a>Facebook</a>
+                <a>Twitter</a>
+                <a>Instagram</a>
+            </ul>
+            <ul class="footBox3">
+            <p>Make Money with Us</p>    
+                <a>Sell on Amazon</a>
+                <a>Sell under Amazon Accelerator</a>
+                <a>Protect and Build Your Brand</a>
+                <a>Amazon Global Selling</a> 
+                <a>Supply to Amazon</a>
+                <a>Become an Affiliate</a> 
+                <a> Fulfilment by Amazon</a>
+                <a>Advertise Your Products</a>
+                <a>Amazon Pay on Merchants</a>
+            </ul>
+            <ul class="footBox4">
+             <p>Let Us Help You</p>   
+                <a>Your Account</a>
+                <a>Returns Centre</a>
+                <a>Recalls and Product Safety Alerts</a>
+               <a>100% Purchase Protection</a> 
+                <a>Amazon App Download</a>
+                <a>Help</a>
+            </ul>
+        </div>
+        <div class="foot-panel3">
+        <div class="logo border logoList"></div>
+        <select class="list border">
+            <option value="">English</option> 
+            <option value="">Hindi</option>
+            <option value="">USA English</option>
+            <option value=""> UK English</option>
+        </select>
+        <select class="list border">
+            <option value="">USD-US-Dolar</option> 
+            <option value="">Hindi</option>
+            <option value="">USA English</option>
+            <option value=""> UK English</option>
+        </select>
+        <select class="list border">
+            <option value="">India</option>
+            <option value="">England</option> 
+            <option value="">USA</option>
+            <option value="">United State</option>
+        </select>
+        </div>
+        <div class="foot-panel4">
+            <div class="pages">
+                <a>Conditions of Use & Sale</a>
+                <a>Privacy Notice</a> 
+                <a>Interest-Based Ads</a> </div>
+            <div class="copyrights">
+                <a>© 1996-2025, Amazon.com, Inc. or its affiliates</a>
+            </div>
+            
+        </div>
+    </footer>
+</body>
+</html>
