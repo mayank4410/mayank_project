@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: lightgreen;
+            color: var(--text-color);
+            transition: background 0.3s, color 0.3s;
+        }
+        :root {
+            --bg-color: lightblue;
+            --text-color: #000;
+            --button-bg: #ddd;
+            --button-active: #bbb;
+            --equal-bg: #ff9500;
+            --clear-bg: #ff3b30;
+            --border-color: black;
+        }
+        :root.dark-mode {
+            --bg-color: #1e1e1e;
+            --text-color: #fff;
+            --button-bg: #444;
+            --button-active: #666;
+            --equal-bg: #ff9500;
+            --clear-bg: #ff3b30;
+            --border-color: #fff;
+        }
+        .calculator-container {
+            border: 3px solid var(--border-color);
+            padding: 15px;
+            border-radius: 15px;
+        }
+        .calculator {
+            width: 320px;
+            max-width: 90vw;
+            background: var(--bg-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 16 / 9;
+        }
+        .display {
+            width: 100%;
+            height: 50px;
+            text-align: right;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            padding: 15px;
+            font-size: 1.2em;
+            border: none;
+            background: var(--button-bg);
+            border-radius: 5px;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+        button:active {
+            background: var(--button-active);
+        }
+        .equal {
+            background: var(--equal-bg);
+            color: white;
+            grid-column: span 2;
+        }
+        .clear {
+            background: var(--clear-bg);
+            color: white;
+        }
+        .theme-toggle {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        @media (max-width: 500px) {
+            .calculator {
+                width: 100%;
+                padding: 15px;
+            }
+            button {
+                padding: 10px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="theme-toggle">
+            <button onclick="toggleTheme()">Light/Dark Mode</button>
+        </div>
+        <div class="calculator">
+            <input type="text" class="display" id="display" disabled>
+            <div class="buttons">
+                <button class="clear" onclick="clearDisplay()">C</button>
+                <button onclick="appendToDisplay('/')">/</button>
+                <button onclick="appendToDisplay('*')">*</button>
+                <button onclick="appendToDisplay('-')">-</button>
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('+')">+</button>
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="deleteLast()">⌫</button>
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button onclick="appendToDisplay('0')">0</button>
+                <button onclick="appendToDisplay('.')">.</button>
+                <button class="equal" onclick="calculateResult()">=</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function appendToDisplay(value) {
+            let display = document.getElementById('display');
+            if (!display.value && /[+*/]/.test(value)) return;
+            if (/[-+*/]$/.test(display.value) && /[-+*/]/.test(value)) return;
+            if (value === '.' && display.value.split(/[-+*/]/).pop().includes('.')) return;
+            display.value += value;
+        }
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+        function deleteLast() {
+            let display = document.getElementById('display');
+            display.value = display.value.slice(0, -1);
+        }
+        function calculateResult() {
+            try {
+                let result = eval(document.getElementById('display').value);
+                document.getElementById('display').value = parseFloat(result.toFixed(10));
+            } catch (e) {
+                alert('Invalid expression');
+            }
+        }
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark-mode');
+        }
+        document.addEventListener('keydown', function(event) {
+            const key = event.key;
+            if (/|[-+*/.=]/.test(key)) {
+                event.preventDefault();
+                if (key === '=') calculateResult();
+                else if (key === 'Backspace') deleteLast();
+                else appendToDisplay(key);
+            }
+            if (key === 'Enter') {
+                event.preventDefault();
+                calculateResult();
+            }
+            if (key === 'Escape') clearDisplay();
+        });
+    </script>
+</body>
+</html>
